@@ -49,6 +49,7 @@
   }
   
   h1 {
-    background-image: url(logo.png) no-repeat;
+    background: url(logo.png) no-repeat;
+    filter: drop-shadow(3px 3px 3px black);
   }
   
