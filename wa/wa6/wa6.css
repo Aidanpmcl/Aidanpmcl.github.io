@@ -1,0 +1,39 @@
+
+.box1 {
+    box-sizing: border-box;
+    background-color: white;
+    position: absolute;
+    top: 12mm;
+    left: 20mm;
+    width: 500px;
+    height: 128px;
+    font-size: 50px;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 0px 0;
+    color: black;
+    text-shadow: 1px 1px 1px black;
+}
+
+.box2 {
+    box-sizing: border-box;
+    background-color: red;
+    position: absolute;
+    bottom: 12mm;
+    right: 100mm;
+    width: 500px;
+    height: 128px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 44px 0;
+    color: white;
+    text-shadow: 5px 5px 5px black;
+}
+
+.neighborhoodWatch {
+    top: 12mm;
+    right: 75mm;
+    position: absolute;
+    width: 200px;
+}
