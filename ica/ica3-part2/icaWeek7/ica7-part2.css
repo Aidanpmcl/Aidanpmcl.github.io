@@ -1,0 +1,70 @@
+body{
+    background-color: olive;
+}
+
+
+#flex-parent{
+    background-color: orangered;
+    display: flex;
+    flex-direction: row;
+}
+#flex-parent p{
+    padding:5vw;
+}
+
+#flex-child1{
+    order: 3;
+}
+#flex-child2{
+    order: 4;
+}
+#flex-child3{
+    order: 2;
+}
+#flex-child4{
+    order: 1;
+}
+
+
+#grid-parent{
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+#grid-parent h1{
+    background-color: grey;
+    padding:3vw 5vh;
+    margin:5vw;
+    
+}
+#no0{
+   grid-column: 2;
+}
+#no1{
+
+}
+#no2{
+
+}
+#no3{
+
+}
+#no4{
+
+}
+#no5{
+
+}
+#no6{
+
+}
+#no7{
+
+}
+#no8{
+
+}
+#no9{
+
+}

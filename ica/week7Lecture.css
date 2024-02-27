@@ -1,0 +1,33 @@
+html {
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightsteelblue;
+}
+
+.flexbox {
+    display: flex;
+    justify-content: center;
+}
+
+.item {
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    border: 2px solid blue;
+}
+
+@media screen and (max-width: 799px) {
+
+    html{
+        background-color: brown;
+    }
+    
+    .flexbox 
+        {display: flex;
+        flex-direction: column;
+    }
+
+    .item {
+
+    }
+}
