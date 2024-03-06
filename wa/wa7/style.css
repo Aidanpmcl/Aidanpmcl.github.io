@@ -24,7 +24,7 @@ body {
     max-width: 980px;
     display: flex;
     flex-direction: row;
-    margin: 20px;
+    justify-content: center;
 
   }
   
