@@ -1,0 +1,66 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: aqua;
+    font: helvetica;
+}
+nav{
+    height: 50vh;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height:20px;
+    background-color: white;
+}
+nav a{
+    width:10vw;
+    text-align: center;
+    text-decoration: none;
+    color:#953553;
+}
+
+
+img{
+    width:30vw;
+    height: 30vh;
+}
+
+#red-ball{
+    background-color: crimson;
+    width: 20px;
+    height:20px;
+    border-radius: 50%;
+    position: absolute;
+    bottom:5vw;
+    bottom:300px;
+    transition: width 2s, height 2s, background-color blue, rotate 2s;
+}
+
+#red-ball:hover {
+    background-color: purple;
+    width: 1000px;
+    rotate: 180def;
+}
+
+@keyframes red-ballmove{
+    from {
+        margin: 0;
+    }
+    25% {
+        margin-right: 75%;
+        margin-top: 0%;
+    }
+    50% {
+        margin-left: 75%;
+        margin-top: 50%;
+    }
+    75% {
+        margin-left: 0%;
+        margin-top: 50%;
+    }
+    to {
+        margin: 0;
+    }
+
+}
