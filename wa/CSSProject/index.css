@@ -3,13 +3,13 @@ body {
     flex-direction: column;
     align-items: center;
     background-color: aqua;
-    font: 16px helvetica; /* Added font size */
+    font: 16px helvetica; 
     padding-top: 1250px;
 }
 
 h1 {
     display: flex;
-    align-items: center; /* Corrected property name */
+    align-items: center; 
     font: 20px helvetica; /* Added font size */
     background-color: aquamarine;
     margin: 10px;
@@ -20,8 +20,8 @@ h1 {
 img {
     position: absolute;
     top: 0;
-    left: 50%; /* Optional: To center the image horizontally */
-    transform: translateX(-50%); /* Optional: To center the image horizontally */
+    left: 50%; 
+    transform: translateX(-50%);
     margin: 10px;
     z-index: 0;
 }
@@ -30,7 +30,6 @@ img {
     display: flex;
     width: 800px;
     height: 360px;
-    font: helvetica;
     background-color: darkcyan;
     color: white;
     margin: 10px;
@@ -43,7 +42,6 @@ img {
     display: flex;
     width: 800px;
     height: 400px;
-    font: helvetica;
     background-color: darkcyan;
     color: white;
     border: 2px solid black;
@@ -56,7 +54,6 @@ img {
     display: flex;
     width: 800px;
     height: 330px;
-    font: helvetica;
     background-color: darkcyan;
     color: white;
     border: 2px solid black;
@@ -69,7 +66,6 @@ img {
     display: flex;
     width: 800px;
     height: 400px;
-    font: helvetica;
     background-color: darkcyan;
     color: white;
     border: 2px solid black;
@@ -81,7 +77,6 @@ img {
     display: flex;
     width: 800px;
     height: 450px;
-    font: helvetica;
     background-color: darkcyan;
     color: white;
     border: 2px solid black;
@@ -93,7 +88,6 @@ img {
     display: flex;
     width: 800px;
     height: 400px;
-    font: helvetica;
     background-color: darkcyan;
     color: white;
     border: 2px solid black;
@@ -105,7 +99,6 @@ img {
     display: flex;
     width: 800px;
     height: 350px;
-    font: helvetica;
     background-color: darkcyan;
     color: white;
     border: 2px solid black;
@@ -117,7 +110,6 @@ img {
     display: flex;
     width: 800px;
     height: 320px;
-    font: helvetica;
     background-color: darkcyan;
     color: white;
     border: 2px solid black;
@@ -129,7 +121,6 @@ img {
     display: flex;
     width: 800px;
     height: 470px;
-    font: helvetica;
     background-color: darkcyan;
     color: white;
     border: 2px solid black;
@@ -141,7 +132,6 @@ img {
     display: flex;
     width: 800px;
     height: 330px;
-    font: helvetica;
     background-color: darkcyan;
     color: white;
     border: 2px solid black;
@@ -149,4 +139,68 @@ img {
     margin: 10px;
     padding: 10px;
 }
+@media only screen and (max-width: 400px) {
+    img {
+        padding-top: 10px; /* Adjusted padding for larger screens */
+        width: 350px;
+        order: -1;
+    }
+    h1 {
+        order: 0;
+        padding-top: 500px;
+    }
+}
+@media only screen and (max-width: 400px) {
+    body {
+        padding-top: 100px; /* Adjusted padding for smaller screens */
+    }
+    
+    #box1 {
+        width: calc(100% - 20px); /* Adjusted width for smaller screens */
+        height: 700px;        
+    }
+    #box2 {
+        width: calc(100% - 20px); /* Adjusted width for smaller screens */
+        height: 800px;
+    }
+    #box3 {
+        width: calc(100% - 20px); /* Adjusted width for smaller screens */
+        height: 800px;
+    }
+    #box4 {
+        width: calc(100% - 20px); /* Adjusted width for smaller screens */
+        height: 800px;
+    }
+    #box5 {
+        width: calc(100% - 20px); /* Adjusted width for smaller screens */
+        height: 800px;
+    }
+    #box6 {
+        width: calc(100% - 20px); /* Adjusted width for smaller screens */
+        height: 800px;
+    }
+    #box7 {
+        width: calc(100% - 20px); /* Adjusted width for smaller screens */
+        height: 700px;
+    }
+    #box8 {
+        width: calc(100% - 20px); /* Adjusted width for smaller screens */
+        height: 700px;
+    }
+    #box9 {
+        width: calc(100% - 20px); /* Adjusted width for smaller screens */
+        height: 890px;
+    }
+    #box10 {
+        width: calc(100% - 20px); /* Adjusted width for smaller screens */
+        height: 800px;
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+    body {
+        padding-top: 1500px; /* Adjusted padding for larger screens */
+    }
+}
+
 
