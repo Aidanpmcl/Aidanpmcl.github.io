@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            border: none;
+            color: aqua;
+            padding: 15px 30px;
+            text-align: center;
+            display: inline-block;
+            font-size: 15px;
+            margin: 2px 4px;
+            cursor: pointer;
+
+        }
+    </style>
+</head>
+<body>
+    <p>Hello World</p>
+
+    <button type="button">Players1: Aidan</button>
+    <script> 
+        const x = 5;
+        console.log(x)
+
+        const button = document.querySelector("button");
+        button.addEventListener('click', runFunction);
+
+        function runFunction() {
+            //console.log("test");
+            const name = prompt('please eneter a name');
+            button.textContent = `Player 1: $(name)`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        button {
+            border: 5px solid black;
+            background-color: aqua;
+            color: black;
+            text-align: center;
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+
+</head>
+<body>
+    <button id="button1" type="button">OOOOOOOOH what could I be?</button>
+
+    <h1>
+        This is an H1
+    </h1>
+
+    <button id="button2" type="button">Now this... this is intriguing</button>
+
+    <button id="button3" type="button">Click to change h1</button>
+
+    <script>
+        const button1 = document.getElementById("button1");
+        button1.addEventListener('click', runFunction);
+
+        function runFunction() {
+            const name = prompt('Please enter a name');
+            button1.textContent = `Player 1: ${name}`;
+        }
+
+        const button2 = document.getElementById("button2");
+        button2.addEventListener('click', changeText);
+
+        function changeText() {
+            alert('Test successful');
+        }
+
+        const button3 = document.getElementById("button3");
+        button3.addEventListener('click', changeH1Text);
+
+        function changeH1Text() {
+            const newHeaderText = prompt('Enter new header text');
+            document.querySelector("h1").textContent = newHeaderText;
+        }
+    </script>
+</body>
+</html>

@@ -2,16 +2,17 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: aqua;
-    font: 16px helvetica; 
+    background-color: #9F1F63;
+    font: 20px helvetica; 
     padding-top: 1250px;
 }
 
 h1 {
     display: flex;
+    text-align: center;
     align-items: center; 
-    font: 20px helvetica; /* Added font size */
-    background-color: aquamarine;
+    font: 24px helvetica; /* Added font size */
+    background-color: #FCB040;
     margin: 10px;
     padding: 10px;
     border: 2px solid black;
@@ -28,116 +29,126 @@ img {
 
 #box1 {
     display: flex;
-    width: 800px;
-    height: 360px;
-    background-color: darkcyan;
+    width: 1200px;
+    height: 450px;
+    background-color: #00AEEF;
     color: white;
     margin: 10px;
     padding: 10px;
     border: 2px solid black;
     border-radius: 5px;
+    text-align: center;
 }
 
 #box2 {
     display: flex;
-    width: 800px;
-    height: 400px;
-    background-color: darkcyan;
+    width: 1200px;
+    height: 470px;
+    background-color: #00AEEF;
     color: white;
     border: 2px solid black;
     border-radius: 5px;
     margin: 10px;
     padding: 10px;
+    text-align: center;
 }
 
 #box3 {
     display: flex;
-    width: 800px;
-    height: 330px;
-    background-color: darkcyan;
+    width: 1200px;
+    height: 430px;
+    background-color: #00AEEF;
     color: white;
     border: 2px solid black;
     border-radius: 5px;
     margin: 10px;
     padding: 10px;
+    text-align: center;
 }
 
 #box4 {
     display: flex;
-    width: 800px;
-    height: 400px;
-    background-color: darkcyan;
+    width: 1200px;
+    height: 470px;
+    background-color: #00AEEF;
     color: white;
     border: 2px solid black;
     border-radius: 5px;
     margin: 10px;
     padding: 10px;
+    text-align: center;
 }
 #box5 {
     display: flex;
-    width: 800px;
-    height: 450px;
-    background-color: darkcyan;
+    width: 1200px;
+    height: 530px;
+    background-color: #00AEEF;
     color: white;
     border: 2px solid black;
     border-radius: 5px;
     margin: 10px;
     padding: 10px;
+    text-align: center;
 }
 #box6 {
     display: flex;
-    width: 800px;
-    height: 400px;
-    background-color: darkcyan;
+    width: 1200px;
+    height: 530px;
+    background-color: #00AEEF;
     color: white;
     border: 2px solid black;
     border-radius: 5px;
     margin: 10px;
     padding: 10px;
+    text-align: center;
 }
 #box7 {
     display: flex;
-    width: 800px;
-    height: 350px;
-    background-color: darkcyan;
+    width: 1200px;
+    height: 500px;
+    background-color: #00AEEF;
     color: white;
-    border: 2px solid black;
+    border: 2px solid #00AEEF;
     border-radius: 5px;
     margin: 10px;
     padding: 10px;
+    text-align: center;
 }
 #box8 {
     display: flex;
-    width: 800px;
-    height: 320px;
-    background-color: darkcyan;
+    width: 1200px;
+    height: 420px;
+    background-color: #00AEEF;
     color: white;
     border: 2px solid black;
     border-radius: 5px;
     margin: 10px;
     padding: 10px;
+    text-align: center;
 }
 #box9 {
     display: flex;
-    width: 800px;
-    height: 470px;
-    background-color: darkcyan;
+    width: 1200px;
+    height: 570px;
+    background-color: #00AEEF;
     color: white;
     border: 2px solid black;
     border-radius: 5px;
     margin: 10px;
     padding: 10px;
+    text-align: center;
 }
 #box10 {
     display: flex;
-    width: 800px;
-    height: 330px;
-    background-color: darkcyan;
+    width: 1200px;
+    height: 400px;
+    background-color: #00AEEF;
     color: white;
     border: 2px solid black;
     border-radius: 5px;
     margin: 10px;
     padding: 10px;
+    text-align: center;
 }
 @media only screen and (max-width: 400px) {
     img {
