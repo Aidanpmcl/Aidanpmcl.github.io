@@ -118,6 +118,11 @@ header {
   background-color: purple;
 }
 
+#paragraph {
+  position: absolute;
+  bottom: 0%;
+}
+
 @media screen and (max-width: 600px) {
   .app {
     width: 100%;
