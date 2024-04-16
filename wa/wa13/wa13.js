@@ -64,7 +64,7 @@ class Ball {
                 const distance = Math.sqrt(dx * dx + dy * dy);
     
                 if (distance < this.size + ball.size) {
-                    // Reverse velocities along collision line
+                    
                     [this.velX, ball.velX] = [ball.velX, this.velX];
                     [this.velY, ball.velY] = [ball.velY, this.velY];
                 }
