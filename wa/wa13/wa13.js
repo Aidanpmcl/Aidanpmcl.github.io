@@ -64,24 +64,14 @@ class Ball {
                 const distance = Math.sqrt(dx * dx + dy * dy);
     
                 if (distance < this.size + ball.size) {
-                    const unitX = dx / distance;
-                    const unitY = dy / distance;
-                    const v1x = this.velX;
-                    const v1y = this.velY;
-                    const v2x = ball.velX;
-                    const v2y = ball.velY;
-                    const parallelVel1 = v1x * unitX + v1y * unitY;
-                    const parallelVel2 = v2x * unitX + v2y * unitY;
-    
-                    this.velX -= 2 * parallelVel1 * unitX;
-                    this.velY -= 2 * parallelVel1 * unitY;
-                    ball.velX -= 2 * parallelVel2 * unitX;
-                    ball.velY -= 2 * parallelVel2 * unitY;
+                    // Reverse velocities along collision line
+                    [this.velX, ball.velX] = [ball.velX, this.velX];
+                    [this.velY, ball.velY] = [ball.velY, this.velY];
                 }
             }
         }
     }
-}    
+}   
 
 const balls = [];
 
