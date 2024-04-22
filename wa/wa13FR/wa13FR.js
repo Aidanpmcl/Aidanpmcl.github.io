@@ -8,6 +8,8 @@ const employees = [
 ];
 console.log(employees);
 
+
+
 // Problem 2
 console.log("Problem 2");
 const company = {
@@ -17,10 +19,14 @@ const company = {
 };
 console.log(company);
 
+
+
 // Problem 3
 console.log("Problem 3");
 company.employees.push({ firstName: "Anna", department: "Tech", designation: "Executive", salary: 25600, raiseEligible: false });
 console.log(company);
+
+
 
 // Problem 4
 console.log("Problem 4");
