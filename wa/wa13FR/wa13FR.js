@@ -1,6 +1,6 @@
 
 // Problem 1
-console.log("// Problem 1");
+console.log("Problem 1");
 const employees = [
     { firstName: "Sam", department: "Tech", designation: "Manager", salary: 40000, raiseEligible: true },
     { firstName: "Mary", department: "Finance", designation: "Trainee", salary: 18500, raiseEligible: true },
@@ -9,7 +9,7 @@ const employees = [
 console.log(employees);
 
 // Problem 2
-console.log("// Problem 2");
+console.log("Problem 2");
 const company = {
     companyName: "Tech Stars",
     website: "www.techstars.site",
