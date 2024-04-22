@@ -62,3 +62,5 @@ for (let i = 0; i < company.employees.length; i++) {
     company.employees[i].wfh = homeEmployees.includes(company.employees[i].firstName);
 }
 console.log(company);
+
+
