@@ -1,24 +1,38 @@
-// Question 1
-const workers = [
+
+// Problem 1
+console.log("// Problem 1");
+const employees = [
     { firstName: "Sam", department: "Tech", designation: "Manager", salary: 40000, raiseEligible: true },
     { firstName: "Mary", department: "Finance", designation: "Trainee", salary: 18500, raiseEligible: true },
     { firstName: "Bill", department: "HR", designation: "Executive", salary: 21200, raiseEligible: false }
 ];
+console.log(employees);
 
-// Question 2
-const company = { CompanyName: "Tech Stars", Website: "www.techstars.site", employees: workers };
+// Problem 2
+console.log("// Problem 2");
+const company = {
+    companyName: "Tech Stars",
+    website: "www.techstars.site",
+    employees: employees
+};
+console.log(company);
 
-// Question 3
+// Problem 3
+console.log("// Problem 3");
 company.employees.push({ firstName: "Anna", department: "Tech", designation: "Executive", salary: 25600, raiseEligible: false });
+console.log(company);
 
-// Question 4
+// Problem 4
+console.log("// Problem 4");
 let totalSalary = 0;
 for (let i = 0; i < company.employees.length; i++) {
     totalSalary += company.employees[i].salary;
 }
+console.log("Total Salary:", totalSalary);
 
-// Question 5
-function raise() {
+// Problem 5
+console.log("// Problem 5");
+function giveRaise(company) {
     for (let i = 0; i < company.employees.length; i++) {
         if (company.employees[i].raiseEligible) {
             company.employees[i].salary *= 1.1;
@@ -26,26 +40,13 @@ function raise() {
         }
     }
 }
-raise();
-
-// Question 6
-const employeesWithWFH = ["Anna", "Sam"];
-for (let i = 0; i < company.employees.length; i++) {
-    company.employees[i].wfh = employeesWithWFH.includes(company.employees[i].firstName);
-}
-
-// Logging
-console.log("Question 1");
-console.log(workers);
-console.log("Question 2");
+giveRaise(company);
 console.log(company);
-console.log("Question 3");
-console.log(company.employees);
-console.log("Question 4");
-console.log(totalSalary);
-console.log("Question 5");
-console.log(company.employees);
-console.log("Question 6");
-console.log(company.employees);
 
-  
+// Problem 6
+console.log("// Problem 6");
+const homeEmployees = ["Anna", "Sam"];
+for (let i = 0; i < company.employees.length; i++) {
+    company.employees[i].wfh = homeEmployees.includes(company.employees[i].firstName);
+}
+console.log(company);
