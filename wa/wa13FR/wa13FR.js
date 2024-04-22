@@ -31,7 +31,7 @@ for (let i = 0; i < company.employees.length; i++) {
 console.log("Total Salary:", totalSalary);
 
 // Problem 5
-console.log("// Problem 5");
+console.log("Problem 5");
 function giveRaise(company) {
     for (let i = 0; i < company.employees.length; i++) {
         if (company.employees[i].raiseEligible) {
