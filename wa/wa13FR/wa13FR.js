@@ -23,7 +23,7 @@ company.employees.push({ firstName: "Anna", department: "Tech", designation: "Ex
 console.log(company);
 
 // Problem 4
-console.log("// Problem 4");
+console.log("Problem 4");
 let totalSalary = 0;
 for (let i = 0; i < company.employees.length; i++) {
     totalSalary += company.employees[i].salary;
