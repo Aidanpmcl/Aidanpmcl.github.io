@@ -30,6 +30,8 @@ for (let i = 0; i < company.employees.length; i++) {
 }
 console.log("Total Salary:", totalSalary);
 
+
+
 // Problem 5
 console.log("Problem 5");
 function giveRaise(company) {
@@ -42,6 +44,8 @@ function giveRaise(company) {
 }
 giveRaise(company);
 console.log(company);
+
+
 
 // Problem 6
 console.log("Problem 6");
