@@ -44,7 +44,7 @@ giveRaise(company);
 console.log(company);
 
 // Problem 6
-console.log("// Problem 6");
+console.log("Problem 6");
 const homeEmployees = ["Anna", "Sam"];
 for (let i = 0; i < company.employees.length; i++) {
     company.employees[i].wfh = homeEmployees.includes(company.employees[i].firstName);
