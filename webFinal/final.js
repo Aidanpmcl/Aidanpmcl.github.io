@@ -7,6 +7,8 @@ const height = (canvas.height = window.innerHeight);
 let valueDisplay = null;
 let specialBallClicked = false; // Variable to track if the special ball is clicked
 
+const balls = [];
+
 function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -86,9 +88,9 @@ class Ball {
     }
 }   
 
-const balls = [];
 
-while (balls.length < 10) {
+
+while (balls.length < 30) {
     const size = random(25,40)
     const ball = new Ball(
         random(0 + size, width - size),
@@ -103,7 +105,7 @@ while (balls.length < 10) {
 }
 
 // Add a red ball with special text
-const specialBall = new Ball(width / 2, height / 2, 0, 0, "red", 60, "DONT CLICK ME");
+const specialBall = new Ball(width / 2, height / 2, 0, 0, "red", 80, "DONT CLICK ME");
 balls.push(specialBall);
 
 function loop () {
