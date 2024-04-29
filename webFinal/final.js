@@ -1,13 +1,13 @@
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
-
-const width = (canvas.width = window.innerWidth);
-const height = (canvas.height = window.innerHeight);
-
+const width = canvas.width = window.innerWidth;
+const height = canvas.height = window.innerHeight;
 let valueDisplay = null;
-let specialBallClicked = false; // Variable to track if the special ball is clicked
+let specialSquareClicked = false; 
+const squares = [];
 
-const balls = [];
+
+
 
 function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -17,13 +17,13 @@ function randomRGB() {
   return `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
 }
 
-function applyRandomValueToBalls(balls) {
-    for (const ball of balls) {
-        ball.value = random(1, 100);
+function applyRandomValueToSquares(squares) {
+    for (const square of squares) {
+        square.value = random(1, 100);
     }
 }
 
-class Ball {
+class Square {
     constructor(x, y, velX, velY, color, size, text) {
         this.x = x;
         this.y = y;
@@ -31,130 +31,134 @@ class Ball {
         this.velY = velY;
         this.color = color;
         this.size = size;
-        this.value = 0;
+        this.angle = 0;
         this.text = text;
     }
 
     draw() {
-        ctx.beginPath();
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.angle);
         ctx.fillStyle = this.color;
-        ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
-        ctx.fill();
+        ctx.fillRect(-this.size/2, -this.size/2, this.size, this.size);
         ctx.fillStyle = "white"; 
         ctx.font = "20px Arial";
         ctx.textAlign = "center";
-        ctx.fillText(this.value, this.x, this.y + 5);
+        ctx.fillText(this.value, 0, 5);
         if (this.text) {
             ctx.fillStyle = "red";
-            ctx.fillText(this.text, this.x, this.y - this.size - 10);
-        } 
+            ctx.fillText(this.text, 0, -this.size/2 - 10);
+        }
+        ctx.restore();
     }
 
     update() {
-        if ((this.x + this.size) >= width) {
+        if ((this.x + this.size/2) >= width || (this.x - this.size/2) <= 0) {
           this.velX = -(this.velX);
         }
       
-        if ((this.x - this.size) <= 0) {
-          this.velX = -(this.velX);
-        }
-      
-        if ((this.y + this.size) >= height) {
-          this.velY = -(this.velY);
-        }
-      
-        if ((this.y - this.size) <= 0) {
+        if ((this.y + this.size/2) >= height || (this.y - this.size/2) <= 0) {
           this.velY = -(this.velY);
         }
       
         this.x += this.velX;
         this.y += this.velY;
+        this.angle += 0.1; 
       }
     
       collisionDetect() {
-        for (const ball of balls) {
-            if (this !== ball) {
-                const dx = ball.x - this.x;
-                const dy = ball.y - this.y;
+        if (this === specialSquare) {
+            return; 
+        }
+        
+        for (const square of squares) {
+            if (this !== square) {
+                const dx = square.x - this.x;
+                const dy = square.y - this.y;
                 const distance = Math.sqrt(dx * dx + dy * dy);
     
-                if (distance < this.size + ball.size) {
-                    
-                    [this.velX, ball.velX] = [ball.velX, this.velX];
-                    [this.velY, ball.velY] = [ball.velY, this.velY];
+                if (distance < this.size + square.size) {
+                    if (this !== specialSquare && square !== specialSquare) {
+                        const tempColor = this.color;
+                        this.color = square.color;
+                        square.color = tempColor;
+                    }
+
+                    [this.velX, square.velX] = [square.velX, this.velX];
+                    [this.velY, square.velY] = [square.velY, this.velY];
                 }
             }
         }
     }
-}   
+}
 
-
-
-while (balls.length < 30) {
-    const size = random(25,40)
-    const ball = new Ball(
-        random(0 + size, width - size),
-        random(0 + size, height - size),
+while (squares.length < 40) {
+    const size = random(5, 75);
+    const square = new Square(
+        random(0 + size/2, width - size/2),
+        random(0 + size/2, height - size/2),
         random(-10, 10),
         random(-10, 10),
         randomRGB(),
-        size,
-    )
+        size
+    );
 
-    balls.push(ball);
+    squares.push(square);
 }
 
-// Add a red ball with special text
-const specialBall = new Ball(width / 2, height / 2, 0, 0, "red", 80, "DONT CLICK ME");
-balls.push(specialBall);
+const specialSquare = new Square(width / 2, height / 2, 0, 0, "red", 200, "DONT CLICK ME");
+squares.push(specialSquare);
 
 function loop () {
     ctx.fillStyle = "rgb( 0 0 0 / 25%)";
     ctx.fillRect(0, 0, width, height);
 
-    if (specialBallClicked) { // Check if the special ball is clicked
+    if (specialSquareClicked) { 
         ctx.fillStyle = "red";
         ctx.fillRect(0, 0, width, height);
+        ctx.fillStyle = "white";
+        ctx.font = "30px Arial";
+        ctx.textAlign = "center";
+        ctx.fillText("The Volume has Exploded!", width / 2, height / 2);
     } else {
-        for (const ball of balls) {
-            ball.draw();
-            ball.update();
-            ball.collisionDetect();
+        for (const square of squares) {
+            square.draw();
+            square.update();
+            square.collisionDetect();
         }
     }
     requestAnimationFrame(loop);
 }
 
-function ballClick(event) {
+function squareClick(event) {
     const clickX = event.clientX - canvas.getBoundingClientRect().left;
     const clickY = event.clientY - canvas.getBoundingClientRect().top;
     
-    for (const ball of balls) {
-        const dx = clickX - ball.x;
-        const dy = clickY - ball.y;
+    for (const square of squares) {
+        const dx = clickX - square.x;
+        const dy = clickY - square.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
         
-        if (distance <= ball.size) {
-            if (ball === specialBall) {
-                // Turn the special ball red when clicked and set the specialBallClicked variable to true
-                ball.color = "red";
-                specialBallClicked = true;
+        if (distance <= square.size/2) {
+            if (square === specialSquare) {
+                square.color = "red";
+                specialSquareClicked = true;
+                return; 
             }
             else {
-                // Create a value display element if a regular ball is clicked
                 if (valueDisplay) {
                     valueDisplay.remove();
                 }
                 valueDisplay = document.createElement("div");
-                valueDisplay.textContent = "Volume: " + ball.value;
+                valueDisplay.textContent = "Volume: " + square.value;
                 valueDisplay.id = "valueDisplay";
                 document.body.appendChild(valueDisplay);
+                break;
             }
-            break; 
         }
     }
 }
 
-canvas.addEventListener("click", ballClick);
-applyRandomValueToBalls(balls);
+canvas.addEventListener("click", squareClick);
+applyRandomValueToSquares(squares);
 loop();
