@@ -119,7 +119,7 @@ function loop () {
         ctx.fillStyle = "white";
         ctx.font = "30px Arial";
         ctx.textAlign = "center";
-        ctx.fillText("The Volume has Exploded!", width / 2, height / 2);
+        ctx.fillText("You have gone deaf! Should have worn ear plugs like mom said.", width / 2, height / 2);
     } else {
         for (const square of squares) {
             square.draw();
