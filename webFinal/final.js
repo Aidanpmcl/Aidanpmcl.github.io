@@ -7,8 +7,6 @@ let specialSquareClicked = false;
 const squares = [];
 
 
-
-
 function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -63,7 +61,7 @@ class Square {
       
         this.x += this.velX;
         this.y += this.velY;
-        this.angle += 0.1; 
+        this.angle += 0.05; 
       }
     
       collisionDetect() {
@@ -93,12 +91,12 @@ class Square {
 }
 
 while (squares.length < 40) {
-    const size = random(5, 75);
+    const size = random(30, 50);
     const square = new Square(
         random(0 + size/2, width - size/2),
         random(0 + size/2, height - size/2),
-        random(-10, 10),
-        random(-10, 10),
+        random(-5, 5),
+        random(-5, 5),
         randomRGB(),
         size
     );
@@ -106,20 +104,26 @@ while (squares.length < 40) {
     squares.push(square);
 }
 
-const specialSquare = new Square(width / 2, height / 2, 0, 0, "red", 200, "DONT CLICK ME");
+const specialSquare = new Square(width / 2, height / 2, 0, 0, "red", 100, "DONT CLICK ME");
 squares.push(specialSquare);
 
 function loop () {
     ctx.fillStyle = "rgb( 0 0 0 / 25%)";
     ctx.fillRect(0, 0, width, height);
+    specialSquare.size += 0.25;
 
     if (specialSquareClicked) { 
-        ctx.fillStyle = "red";
-        ctx.fillRect(0, 0, width, height);
-        ctx.fillStyle = "white";
-        ctx.font = "30px Arial";
-        ctx.textAlign = "center";
-        ctx.fillText("THE VOLUME HAS EXPLODED!", width / 2, height / 2);
+        
+        specialSquare.draw();
+        
+        if (specialSquare.size >= 400) {
+            ctx.fillStyle = "red";
+            ctx.fillRect(0, 0, width, height);
+            ctx.fillStyle = "white";
+            ctx.font = "30px Arial";
+            ctx.textAlign = "center";
+            ctx.fillText("THE VOLUME HAS EXPLODED!", width / 2, height / 2);
+        }
     } else {
         for (const square of squares) {
             square.draw();
